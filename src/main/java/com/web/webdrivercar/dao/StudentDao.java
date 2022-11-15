@@ -29,9 +29,9 @@ public class StudentDao {
         }
     }
 
-    public void addGrade(int id,int n,int grade){
+    public void addGrade(int id,String n,int grade){
         try {
-            String str = "update student set %d = %d where id = %d;";
+            String str = "update student set %s = %d where id = %d;";
             String sqlStr = String.format(str,n,grade,id);
             Connection connection = connectionPool.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sqlStr);
@@ -42,7 +42,7 @@ public class StudentDao {
         }
     }
 
-    public List<Student> studentList(){
+    public List<Student> getStudentList(){
         try {
             String str = "select * from student;";
             Connection connection = connectionPool.getConnection();
@@ -52,10 +52,10 @@ public class StudentDao {
             while(resultSet.next()){
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int class1 = resultSet.getInt("1");
-                int class2 = resultSet.getInt("2");
-                int class3 = resultSet.getInt("3");
-                int class4 = resultSet.getInt("4");
+                int class1 = resultSet.getInt("class1");
+                int class2 = resultSet.getInt("class2");
+                int class3 = resultSet.getInt("class3");
+                int class4 = resultSet.getInt("class4");
                 Student student = new Student();
                 student.setId(id);
                 student.setName(name);
@@ -66,10 +66,10 @@ public class StudentDao {
                 studentList.add(student);
             }
             connectionPool.returnConnection(connection);
+            return studentList;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return studentList();
     }
 
 }

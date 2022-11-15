@@ -30,18 +30,13 @@ public class StudentController {
             @RequestParam(name="id")
             int id,
             @RequestParam(name="n")
-            int n,
+            String n,
             @RequestParam(name="grade")
             int grade){
         studentService.addGrade(id,n,grade);
         return "addGrade";
     }
 
-    @RequestMapping(path="/studentList",method = RequestMethod.POST)
-    public String studentList(Model model){
-        List<Student> studentList = studentService.studentList();
-        model.addAttribute("studentList",studentList);
-        return "studentList";
-    }
+
 
 }

@@ -3,7 +3,7 @@ package com.web.webdrivercar.model;
 public class Student {
     int id;
     String name;
-    int n;
+    String n;
     int class1Grade;
     int class2Grade;
     int class3Grade;
@@ -25,11 +25,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getN() {
+    public String getN() {
         return n;
     }
 
-    public void setN(int n) {
+    public void setN(String n) {
         this.n = n;
     }
 

@@ -19,7 +19,6 @@ public class UserService implements IUserService {
 
     @Override
     public User getUser(String name) {
-        User user = userDao.getUser(name);
-        return user;
+        return userDao.getUser(name);
     }
 }

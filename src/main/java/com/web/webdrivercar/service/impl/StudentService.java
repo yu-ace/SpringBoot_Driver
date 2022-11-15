@@ -20,13 +20,12 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void addGrade(int id, int n, int grade) {
+    public void addGrade(int id, String n, int grade) {
         studentDao.addGrade(id, n, grade);
     }
 
     @Override
-    public List<com.web.webdrivercar.model.Student> studentList() {
-        List<Student> studentList = studentDao.studentList();
-        return studentList;
+    public List<Student> studentList() {
+        return studentDao.getStudentList();
     }
 }
