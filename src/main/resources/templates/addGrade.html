@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addGrade</title>
+</head>
+<body>
+<form action="/addGrade" method="post">
+  <div>
+    学生id<input type="text" name="id">
+  </div>
+  <div>
+    考试科目<select name="n">
+    <option value="1" selected>科目一</option>
+    <option value="2">科目二</option>
+    <option value="3">科目三</option>
+    <option value="4">科目四</option>
+  </select>
+  </div>
+  <div>
+    考试成绩<input type="number" name="grade">
+  </div>
+  <input type="submit" value="提交">
+</form>
+</body>
+</html>

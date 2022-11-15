@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>studentList</title>
+</head>
+<body>
+<h1>学生列表</h1>
+<table>
+  <tr th:each="m:${studengList}">
+    <td th:text="${m.id}"></td>
+    <td th:text="${m.name}"></td>
+    <td th:text="${m.class1Grade}"></td>
+    <td th:text="${m.class2Grade}"></td>
+    <td th:text="${m.class3Grade}"></td>
+    <td th:text="${m.class4Grade}"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
